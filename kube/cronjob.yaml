@@ -15,8 +15,8 @@ spec:
               image: gandralf/balances_ap:latest
               imagePullPolicy: Always
               env:
-                - name: SFTP_URL
-                  value: "sftp://209.159.147.64"
+                - name: SFTP_HOST
+                  value: "209.159.147.64"
                 - name: SFTP_USERNAME
                   value: brxbrasil
                 - name: SFTP_PASSWORD
@@ -24,6 +24,8 @@ spec:
                     secretKeyRef:
                       name: ap-secrets
                       key: FTP_PASSWORD 
+                - name: IGNORE_ACCOUNTS
+                  value: "1,2,3,1252,1253,1834,12266,35395,46037,49855,315441,370117"
                 - name: RABBITMQ_URL
                   valueFrom:
                     secretKeyRef:

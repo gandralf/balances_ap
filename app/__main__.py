@@ -2,10 +2,9 @@
 
 from dotenv import load_dotenv
 import logging
-from typing import Optional
 
 from app.config import configure_logging, configure_sentry, check_env
-from refresh import refresh_balances
+from app.refresh import refresh_balances
 
 
 def main() -> None:

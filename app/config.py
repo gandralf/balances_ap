@@ -22,7 +22,7 @@ def configure_sentry() -> None:
 
 
 def check_env() -> None:
-    required_env: List[str] = ['SFTP_URL', 'SFTP_USERNAME', 'SFTP_PASSWORD', 'RABBITMQ_URL']
+    required_env: List[str] = ['SFTP_HOST', 'SFTP_USERNAME', 'SFTP_PASSWORD', 'RABBITMQ_URL']
     missing: List[str] = [v for v in required_env if not os.getenv(v)]
     if len(missing):
         raise EnvironmentError(f"Missing required env vars: {missing}")
